@@ -1,8 +1,8 @@
-# clifp
+# crafp
 
-[![Build](https://github.com/Erdragh/clifp/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Erdragh/clifp/actions/workflows/build.yml)
+[![Build](https://github.com/Erdragh/clifp/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Erdragh/crafp/actions/workflows/build.yml)
 
-**CLI** - **f**ilter - **p**rogram
+**c**li - **r**ead - **a**nd - **f**ilter - **p**rogram
 
 This is a simple grep-like command line utility for finding a specific keyword in a file.
 
@@ -20,10 +20,10 @@ This is an overview on what this tool can and can't do:
 # Usage
 If you really want to use this, clone this repository and use cargo to build it:
 ```
-git clone https://github.com/Erdragh/clifp
+git clone https://github.com/Erdragh/crafp
 ```
 ```
-cd clifp
+cd crafp
 ```
 ```
 cargo build --release
