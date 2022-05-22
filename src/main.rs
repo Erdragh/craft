@@ -27,7 +27,7 @@ impl fmt::Display for Out {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let higlighted_text = format!("{}{}{}", 
             &(self.text)[0 .. self.from],
-            format!("{}", &(self.text)[self.from .. self.to+1]).bold().red(),
+            format!("{}", &(self.text)[self.from .. self.to+1]).bold().blue(),
             &(self.text)[self.to+1..]);
         write!(f, "l{};c{}: {}", format!("{}", self.linecount).green(), format!("{}", self.from).green(), higlighted_text)
     }
