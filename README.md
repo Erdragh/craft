@@ -1,4 +1,6 @@
-# crep
+# clifp
+**CLI** - **f**ilter - **p**rogram
+
 This is a simple grep-like command line utility for finding a specific keyword in a file.
 
 **NOT REALLY INTENDED FOR USE**, it's just my little try at creating a command line utility.
@@ -15,10 +17,10 @@ This is an overview on what this tool can and can't do:
 # Usage
 If you really want to use this, clone this repository and use cargo to build it:
 ```
-git clone https://github.com/Erdragh/crep
+git clone https://github.com/Erdragh/clifp
 ```
 ```
-cd crep
+cd clifp
 ```
 ```
 cargo build --release
