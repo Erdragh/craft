@@ -1,6 +1,6 @@
 # clifp
 
-![example workflow](https://github.com/Erdragh/clirp/actions/workflows/rust.yml/badge.svg)
+[![Build](https://github.com/Erdragh/clifp/actions/workflows/build.yml/badge.svg)](https://github.com/Erdragh/clifp/actions/workflows/build.yml)
 
 **CLI** - **f**ilter - **p**rogram
 
