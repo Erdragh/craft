@@ -1,6 +1,6 @@
 # clifp
 
-[![Build](https://github.com/Erdragh/clifp/actions/workflows/build.yml/badge.svg)](https://github.com/Erdragh/clifp/actions/workflows/build.yml)
+[![Build](https://github.com/Erdragh/clifp/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Erdragh/clifp/actions/workflows/build.yml)
 
 **CLI** - **f**ilter - **p**rogram
 
