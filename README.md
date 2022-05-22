@@ -1,4 +1,7 @@
 # clifp
+
+![example workflow](https://github.com/Erdragh/clirp/actions/workflows/rust.yml/badge.svg)
+
 **CLI** - **f**ilter - **p**rogram
 
 This is a simple grep-like command line utility for finding a specific keyword in a file.
