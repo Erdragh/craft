@@ -76,8 +76,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "grrs"
-version = "0.1.0"
+name = "crafp"
+version = "0.1.1"
 dependencies = [
  "clap",
  "colored",
