@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'grrs'",
+            "name": "Debug executable 'crafp'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=grrs",
-                    "--package=grrs"
+                    "--bin=crafp",
+                    "--package=crafp"
                 ],
                 "filter": {
-                    "name": "grrs",
+                    "name": "crafp",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'grrs'",
+            "name": "Debug unit tests in executable 'crafp'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=grrs",
-                    "--package=grrs"
+                    "--bin=crafp",
+                    "--package=crafp"
                 ],
                 "filter": {
-                    "name": "grrs",
+                    "name": "crafp",
                     "kind": "bin"
                 }
             },
