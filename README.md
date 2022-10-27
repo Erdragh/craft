@@ -14,7 +14,7 @@ This is an overview on what this tool can and can't do:
 - [x] Output the line and number of character where the keyword was found
 - [x] Highlight these various pieces of information
 - [ ] Support for piping (`|`) the output from other command line programs
-- [ ] RegEx instead of simple keywords
+- [x] RegEx instead of simple keywords
 - [ ] A help page
 
 # Usage
