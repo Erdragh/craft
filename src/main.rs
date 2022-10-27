@@ -10,7 +10,6 @@ use colored::Colorize;
 #[derive(Parser)]
 struct Cli {
     pattern: String,
-    #[clap(parse(from_os_str))]
     path: std::path::PathBuf,
 }
 
@@ -25,10 +24,16 @@ struct Out {
 //Implementation of Display for the Out struct, so I can easily print it with println!("{}", Out)
 impl fmt::Display for Out {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let higlighted_text = format!("{}{}{}", 
+        // format the highlighted text
+        let higlighted_text = format!("{}{}{}",
+            // the part before the match 
             &(self.text)[0 .. self.from],
+            // the part that matches, in blue and bold
             format!("{}", &(self.text)[self.from .. self.to+1]).bold().blue(),
+            // the remainder of the line
             &(self.text)[self.to+1..]);
+
+        // actually write the output.
         write!(f, "l{};c{}: {}", format!("{}", self.linecount).green(), format!("{}", self.from).green(), higlighted_text)
     }
 }
@@ -46,17 +51,22 @@ fn main() {
 
     //loops through all lines in a file
     for line in reader.lines() {
-        let text = line.unwrap();
-        count = count + 1;
-        if text.contains(&args.pattern) {
-            let index = text.find(&args.pattern);
-            let line_out = Out {
-                linecount: count,
-                from: index.unwrap(),
-                to: index.unwrap() + &args.pattern.len() - 1,
-                text: text,
-            };
-            println!("{}", line_out);
+        match line {
+            Ok(text) => {
+                count = count + 1;
+                if let Some(index) = text.find(&args.pattern) {
+                    let line_out = Out {
+                        linecount: count,
+                        from: index,
+                        to: index + &args.pattern.len() - 1,
+                        text
+                    };
+                    println!("{}", line_out);
+                }
+            }
+            Err(error) => {
+                println!("{}", error)
+            }
         }
     }
 }
