@@ -15,7 +15,7 @@ This is an overview on what this tool can and can't do:
 - [x] Highlight these various pieces of information
 - [ ] Support for piping (`|`) the output from other command line programs
 - [x] RegEx instead of simple keywords
-- [ ] A help page
+- [x] A help page
 
 # Usage
 If you really want to use this, clone this repository and use cargo to build it:

@@ -10,7 +10,9 @@ use std::io::BufReader;
 //Using clap to have cli input
 #[derive(Parser)]
 struct Cli {
+    /// The pattern that will be checked for. This is interpreted as a regex, so be careful with special characters
     pattern: String,
+    /// The file that will be checked.
     path: std::path::PathBuf,
 }
 
