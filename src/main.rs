@@ -1,4 +1,4 @@
-//Import the crates that I used, clap for CLI and colored for colored output
+// Import the crates that I used, clap for CLI and colored for colored output
 use clap::Parser;
 use colored::Colorize;
 use regex::Regex;
@@ -9,16 +9,25 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
 
-//Using clap to have cli input
+// Using clap to have cli input
+
+/// A simple grep-clone that is written in
+/// Rust. I made this, because I wanted to 
+/// learn Rust. This has the same basic
+/// functionality as grep, but it shows the
+/// line and column on which a match was found
+/// and colors it in the output.
 #[derive(Parser)]
 struct Cli {
-    /// The pattern that will be checked for. This is interpreted as a regex, so be careful with special characters
+    /// The pattern that will be checked for.
+    /// This is interpreted as a regex, so be
+    /// careful with special characters
     pattern: String,
     /// The file that will be checked.
     path: Option<std::path::PathBuf>,
 }
 
-//A helper struct for outputting lines
+// A helper struct for outputting lines
 struct Out {
     linecount: i32,
     from: usize,
@@ -26,7 +35,8 @@ struct Out {
     text: String,
 }
 
-//Implementation of Display for the Out struct, so I can easily print it with println!("{}", Out)
+// Implementation of Display for the Out struct, 
+// so I can easily print it with println!("{}", Out)
 impl fmt::Display for Out {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // format the highlighted text
@@ -55,37 +65,50 @@ impl fmt::Display for Out {
 
 fn main() -> Result<()> {
 
-    //parses the command line args
+    // parses the command line args
     let args = Cli::parse();
 
     let regex: Regex = Regex::new(&args.pattern).unwrap();
     // let re: Regex = Regex::new(r"version").unwrap();
 
+    // Check whether the user provided a file.
+    // if not we will use the standard input
     if let Some(path) = &args.path {
+        // read the file that was specified
         let f = File::open(path).unwrap();
         let reader = BufReader::new(f);
+
+        // counts on which line we are
         let mut count = 0;
         for line in reader.lines() {
             match line {
                 Ok(line_string) => {
+                    // if we were able to read the line
+                    // try to find matches and output them
                     match_and_output(&regex, line_string.as_str(), count);
                 }
                 Err(_) => {}
             }
+            // increase the line count
             count += 1;
         }
     } else {
+        // read from the standard input
         let stdin = stdin();
         let handle = stdin.lock();
 
+        // counts on which line we are
         let mut count = 0;
         for line in handle.lines() {
             match line {
                 Ok(line_string) => {
+                    // if we were able to read the line
+                    // try to find matches and output them
                     match_and_output(&regex, line_string.as_str(), count);
                 }
                 Err(_) => {}
             }
+            // increase the line count
             count += 1;
         }
     }
