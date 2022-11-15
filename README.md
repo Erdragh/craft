@@ -8,14 +8,13 @@ This is a simple grep-like command line utility for finding a specific keyword i
 
 **NOT REALLY INTENDED FOR USE**, it's just my little try at creating a command line utility.
 
-This is an overview on what this tool can and can't do:
+This is an overview on what this tool can do:
 
-- [x] Find a keyword in a file
-- [x] Output the line and number of character where the keyword was found
+- [x] Filter by RegEx
+- [x] Output the line and number of character where a match was found
 - [x] Highlight these various pieces of information
-- [ ] Support for piping (`|`) the output from other command line programs
-- [x] RegEx instead of simple keywords
-- [x] A help page
+- [x] Support for piping (`|`) the output from other command line programs. This utilizes the standard input.
+- [x] Show a help page
 
 # Usage
 If you really want to use this, clone this repository and use cargo to build it:
