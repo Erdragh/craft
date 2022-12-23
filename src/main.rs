@@ -74,23 +74,29 @@ fn main() -> Result<()> {
     // Check whether the user provided a file.
     // if not we will use the standard input
     if let Some(path) = &args.path {
-        // read the file that was specified
-        let f = File::open(path).unwrap();
-        let reader = BufReader::new(f);
+        match File::open(path) {
+            Ok(f) => {
+                // read the file that was specified
+                let reader = BufReader::new(f);
 
-        // counts on which line we are
-        let mut count = 0;
-        for line in reader.lines() {
-            match line {
-                Ok(line_string) => {
-                    // if we were able to read the line
-                    // try to find matches and output them
-                    match_and_output(&regex, line_string.as_str(), count);
+                // counts on which line we are
+                let mut count = 0;
+                for line in reader.lines() {
+                    match line {
+                        Ok(line_string) => {
+                            // if we were able to read the line
+                            // try to find matches and output them
+                            match_and_output(&regex, line_string.as_str(), count);
+                        }
+                        Err(_) => {}
+                    }
+                    // increase the line count
+                    count += 1;
                 }
-                Err(_) => {}
             }
-            // increase the line count
-            count += 1;
+            Err(_) => {
+                println!("Something went wrong while trying to open the file");
+            }
         }
     } else {
         // read from the standard input
