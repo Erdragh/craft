@@ -33,5 +33,3 @@ The binary will be in `target/release`. Put this wherever you want and you can e
 You'll have to have rustup installed, so you have cargo. I use VSCode with various Rust extensions, but you can also use bare vim from the command line with `cargo run` to run your code. 
 
 Any Pull Request is welcome as long as it doesn't compromise anything or change anything about this.
-
-*Side Note:* I really don't expect any PRs as this is literally just a project for me to learn Rust and CLI programming a bit.
