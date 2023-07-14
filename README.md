@@ -1,8 +1,8 @@
-# crafp
+# craft
 
 [![Build](https://github.com/Erdragh/clifp/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/Erdragh/crafp/actions/workflows/build.yml)
 
-**c**li - **r**ead - **a**nd - **f**ilter - **p**rogram
+**c**li - **r**ead - **a**nd - **f**ilter - **t**ool
 
 This is a simple grep-like command line utility for finding a specific keyword in a file.
 
@@ -19,17 +19,18 @@ This is an overview on what this tool can do:
 # Usage
 If you really want to use this, clone this repository and use cargo to build it:
 ```
-git clone https://github.com/Erdragh/crafp
+git clone https://github.com/Erdragh/craft
 ```
 ```
-cd crafp
+cd craft
 ```
 ```
 cargo build --release
 ```
-The binary will be in `target/release`. Put this wherever you want and you can execute it from there - I think.
+The binary will be in `target/release`.
 
 # Contributing
-You'll have to have rustup installed, so you have cargo. I use VSCode with various Rust extensions, but you can also use bare vim from the command line with `cargo run` to run your code. 
 
-Any Pull Request is welcome as long as it doesn't compromise anything or change anything about this.
+You'll have to be able to run `cargo` to build this project, which means having the Rust toolchain installed. The easiest way to do this is to use rustup.
+
+Any Pull Request is welcome as long as it doesn't change basic functionality.
